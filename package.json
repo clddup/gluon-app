@@ -1,0 +1,27 @@
+{
+  "name": "gluon-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev:gluon": "run-p dev gluon",
+    "dev": "vite",
+    "build": "vite build && cross-env NODE_ENV=production && npm run client && node src/index build %cd%/%npm_package_name% --embed-node --minify-binary",
+    "preview": "vite preview",
+    "gluon": "cross-env NODE_ENV=development node app/index.js",
+    "client": "node client.js"
+  },
+  "dependencies": {
+    "@gluon-framework/gluon": "^0.14.0",
+    "vue": "^3.3.4"
+  },
+  "devDependencies": {
+    "@gluon-framework/glugun": "^4.1.0",
+    "@vitejs/plugin-vue": "^4.2.3",
+    "cross-env": "^7.0.3",
+    "npm-run-all": "^4.1.5",
+    "vite": "^4.4.5",
+    "wait-on": "^7.2.0",
+    "ws": "^8.14.2"
+  }
+}
